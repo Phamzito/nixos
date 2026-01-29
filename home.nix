@@ -21,6 +21,7 @@
     lutris
     prismlauncher
     winetricks
+    hydralauncher
     wineWowPackages.staging
     bottles
     brave
