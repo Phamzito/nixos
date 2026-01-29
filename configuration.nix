@@ -46,7 +46,7 @@
     extraGroups = [ "networkmanager" "wheel" "gamemode" ];
     packages = with pkgs; [];
   };
-
+  programs.gamemode.enable = true;
   programs.steam = {
     enable = true;
     package = pkgs.steam.override {
