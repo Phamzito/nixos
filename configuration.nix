@@ -28,7 +28,10 @@
   };
 
   console.keyMap = "es";
-
+  hardware = {
+    amdgpu.opencl.enable = true;
+    i2c.enable = true;
+  };
   services.printing.enable = true;
 
   services.pulseaudio.enable = false;
@@ -43,7 +46,7 @@
   users.users.pham = {
     isNormalUser = true;
     description = "Pham";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "i2c" ];
     packages = with pkgs; [];
   };
   programs.gamemode.enable = true;
