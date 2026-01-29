@@ -7,7 +7,13 @@
     "Xcursor.size" = 24;
     "Xft.dpi" = 96;
   };
-
+  programs.discord = {
+    enable = true;
+    package = pkgs.discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+    };
+  };
   home.packages = with pkgs; [
     fastfetch
     nnn
