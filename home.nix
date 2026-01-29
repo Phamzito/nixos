@@ -29,7 +29,7 @@
     xz
     unzip
     p7zip
-
+    heroic
     ripgrep
     jq
     yq-go
