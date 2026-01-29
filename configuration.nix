@@ -44,10 +44,7 @@
     isNormalUser = true;
     description = "Pham";
     extraGroups = [ "networkmanager" "wheel" "gamemode" ];
-    packages = with pkgs; [
-      thunderbird
-      brave
-    ];
+    packages = with pkgs; [];
   };
 
   programs.steam = {
