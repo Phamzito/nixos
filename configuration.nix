@@ -43,14 +43,21 @@
   users.users.pham = {
     isNormalUser = true;
     description = "Pham";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" ];
     packages = with pkgs; [
       thunderbird
       brave
     ];
   };
 
-  programs.firefox.enable = true;
+  programs.steam = {
+    enable = true;
+    package = pkgs.steam.override {
+      extraPkgs = pkgs: with pkgs; [
+        gamemode
+      ];
+    };
+  };
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
