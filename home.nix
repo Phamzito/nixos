@@ -19,6 +19,7 @@
     nnn
     mangohud
     lutris
+    protonplus
     prismlauncher
     winetricks
     hydralauncher
