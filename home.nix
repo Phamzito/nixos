@@ -17,6 +17,12 @@
   home.packages = with pkgs; [
     fastfetch
     nnn
+    mangohud
+    lutris
+    prismlauncher
+    winetricks
+    wineWowPackages.staging
+    bottles
     brave
     keepassxc
     zip
