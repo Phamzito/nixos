@@ -13,7 +13,7 @@
     "kernel.sched_latency_ns" = 6000000;
     "kernel.sched_min_granularity_ns" = 750000;
     "kernel.sched_wakeup_granularity_ns" = 1000000;
-};
+  };
 
   ## Configuración de Nix
   nix.settings.experimental-features = [
@@ -53,8 +53,7 @@
 
   ## Configuración de hardware
   hardware = {
-    # OpenGL / Vulkan (necesario para juegos y Steam)
-    opengl = {
+    graphics = {
       enable = true;
     };
 
