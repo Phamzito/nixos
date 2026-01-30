@@ -1,57 +1,104 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
+
+  ## Arranque del sistema
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  networking.hostName = "phamnochita";
-  networking.networkmanager.enable = true;
 
+  ## Configuración de Nix
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  ## Red
+  networking = {
+    hostName = "phamnochita";
+    networkmanager.enable = true;
+  };
+
+  ## Zona horaria e idioma
   time.timeZone = "America/Mexico_City";
-
   i18n.defaultLocale = "es_MX.UTF-8";
+  console.keyMap = "es";
 
-  services.xserver.enable = true;
+  ## Servidor gráfico y GNOME
+  services.xserver = {
+    enable = true;
+
+    xkb = {
+      layout = "es";
+      variant = "";
+    };
+
+    # Driver de video para AMD
+    videoDrivers = [ "amdgpu" ];
+  };
 
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
-  services.xserver.xkb = {
-    layout = "es";
-    variant = "";
-  };
-
-  console.keyMap = "es";
+  ## Configuración de hardware
   hardware = {
+    # OpenGL / Vulkan (necesario para juegos y Steam)
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
+
+    # Soporte OpenCL para AMD
     amdgpu.opencl.enable = true;
+
+    # I2C (sensores, brillo por DDC/CI, etc.)
     i2c.enable = true;
   };
+
+  ## Impresión
   services.printing.enable = true;
 
+  ## Audio (PipeWire)
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
+
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+
     pulse.enable = true;
     jack.enable = true;
   };
+
+  ## Usuarios
   users.users.pham = {
     isNormalUser = true;
     description = "Pham";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" "i2c" ];
-    packages = with pkgs; [];
+
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "gamemode"
+      "i2c"
+    ];
+
+    packages = with pkgs; [ ];
   };
+
+  ## Gaming
   programs.gamemode.enable = true;
+
   programs.steam = {
     enable = true;
+
     package = pkgs.steam.override {
       extraPkgs = pkgs: with pkgs; [
         gamemode
@@ -59,12 +106,15 @@
     };
   };
 
+  ## Paquetes del sistema
   nixpkgs.config.allowUnfree = true;
+
   environment.systemPackages = with pkgs; [
     git
     vim
     wget
   ];
-  system.stateVersion = "25.11";
 
+  ## Versión del sistema
+  system.stateVersion = "25.11";
 }
