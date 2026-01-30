@@ -20,6 +20,8 @@
     "usbhid.kbpoll=1"
     "usbhid.mousepoll=1"    
     "usbhid.jspoll=1"
+    "preempt=full" 
+    "threadirqs"
     "amdgpu.ppfeaturemask=0xffffffff"
   ];
   boot.kernel.sysctl = {
