@@ -56,8 +56,6 @@
     # OpenGL / Vulkan (necesario para juegos y Steam)
     opengl = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
     };
 
     # Soporte OpenCL para AMD
