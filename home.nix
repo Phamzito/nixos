@@ -152,7 +152,7 @@
       power-button-action = "interactive";
     };
     "org/gnome/desktop/peripherals/keyboard" = {
-      delay = uint32 200;
+      delay = uint32 180;
       repeat-interval = uint32 20;
     };
   };
