@@ -9,6 +9,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  ## Parámetros del kernel para gaming
+  boot.kernel.sysctl = {
+    "kernel.sched_latency_ns" = 6000000;
+    "kernel.sched_min_granularity_ns" = 750000;
+    "kernel.sched_wakeup_granularity_ns" = 1000000;
+  };
 
   ## Configuración de Nix
   nix.settings.experimental-features = [
