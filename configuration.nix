@@ -40,7 +40,7 @@
     };
 
     # Driver de video para AMD
-    videoDrivers = [ "amdgpu" ];
+    # videoDrivers = [ "amdgpu" ];
   };
 
   services.displayManager.gdm.enable = true;
@@ -48,9 +48,9 @@
 
   ## Configuración de hardware
   hardware = {
-    graphics = {
-      enable = true;
-    };
+    # graphics = {
+    #  enable = true;
+    # };
 
     # Soporte OpenCL para AMD
     amdgpu.opencl.enable = true;
@@ -94,10 +94,10 @@
   };
 
   ## Variables de entorno para AMD + Mesa
-  environment.sessionVariables = {
-    AMD_VULKAN_ICD = "RADV";
-    RADV_PERFTEST = "aco";
-  };
+  # environment.sessionVariables = {
+  #  AMD_VULKAN_ICD = "RADV";
+  #  RADV_PERFTEST = "aco";
+  # };
 
   ## Gaming
   programs.gamemode.enable = true;
