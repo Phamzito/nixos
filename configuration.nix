@@ -16,7 +16,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   boot.kernelModules = [ "ntsync" ];
-  boot.kernelParams = [ "ntsync.init=1" "amdgpu.ppfeaturemask=0xffffffff" ];
+  boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
   boot.kernel.sysctl = {
     "kernel.sched_latency_ns" = 6000000;
     "kernel.sched_min_granularity_ns" = 750000;
