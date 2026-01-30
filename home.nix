@@ -151,6 +151,10 @@
       sleep-inactive-ac-type = "nothing";
       power-button-action = "interactive";
     };
+    "org/gnome/desktop/peripherals/keyboard" = {
+      delay = uint32 200;
+      repeat-interval = uint32 20;
+    };
   };
 
   ## Versión de Home Manager (NO tocar)
