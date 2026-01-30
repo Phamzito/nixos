@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   ## Usuario
@@ -152,8 +152,8 @@
       power-button-action = "interactive";
     };
     "org/gnome/desktop/peripherals/keyboard" = {
-      delay = uint32 180;
-      repeat-interval = uint32 20;
+      delay = lib.hm.gvariant.mkUint32 180;
+      repeat-interval = lib.hm.gvariant.mkUint32 20;
     };
   };
 
