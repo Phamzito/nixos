@@ -103,10 +103,13 @@
     packages = with pkgs; [ ];
   };
 
-  ## Variables de entorno para AMD + Mesa
+  systemd.services.lactd.enable = true;
+
+  ## Variables de entorno
   environment.sessionVariables = {
     AMD_VULKAN_ICD = "RADV";
     RADV_PERFTEST = "aco";
+    MESA_DISK_CACHE_SINGLE_FILE = "1";
   };
 
   ## Gaming
@@ -126,6 +129,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    lact
     git
     vim
     wget
