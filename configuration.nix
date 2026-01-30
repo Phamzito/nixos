@@ -9,7 +9,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  ## Parámetros del kernel para gaming
+  boot.kernelModules = [ "ntsync" ];
   boot.kernel.sysctl = {
     "kernel.sched_latency_ns" = 6000000;
     "kernel.sched_min_granularity_ns" = 750000;
