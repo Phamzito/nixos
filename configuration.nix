@@ -14,8 +14,8 @@
   ## Arranque del sistema
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelModules = [ "ntsync" ];
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelParams = [ "ntsync.init=1" ];
   boot.kernel.sysctl = {
     "kernel.sched_latency_ns" = 6000000;
     "kernel.sched_min_granularity_ns" = 750000;
