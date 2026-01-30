@@ -1,7 +1,13 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
+    inputs.nixos-hardware.nixosModules.common-cpu-amd
+    inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
+    inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
+    inputs.nixos-hardware.nixosModules.common-gpu-amd
+    inputs.nixos-hardware.nixosModules.common-pc
+    inputs.nixos-hardware.nixosModules.common-pc-ssd
     ./hardware-configuration.nix
   ];
 
@@ -14,6 +20,8 @@
     "kernel.sched_latency_ns" = 6000000;
     "kernel.sched_min_granularity_ns" = 750000;
     "kernel.sched_wakeup_granularity_ns" = 1000000;
+    "vm.max_map_count" = 2147483642;
+    "vm.swappiness" = 10;
   };
 
   ## Configuración de Nix
@@ -54,10 +62,6 @@
 
   ## Configuración de hardware
   hardware = {
-    graphics = {
-      enable = true;
-    };
-
     # Soporte OpenCL para AMD
     amdgpu.opencl.enable = true;
 
