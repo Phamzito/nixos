@@ -23,8 +23,8 @@
   ## Paquetes de usuario
   home.packages = with pkgs; [
     # Gnome
-    gnomeExtensions.disable-unredirect-fullscreen-windows
     gnomeExtensions.no-overview
+    gnomeExtensions.emoji-copy
 
     # Utilidades
     fastfetch
