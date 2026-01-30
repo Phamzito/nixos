@@ -22,6 +22,10 @@
 
   ## Paquetes de usuario
   home.packages = with pkgs; [
+    # Gnome
+    gnomeExtensions.disable-unredirect-fullscreen-windows
+    gnomeExtensions.no-overview
+
     # Utilidades
     fastfetch
     nnn
@@ -89,19 +93,6 @@
     zstd
     gnupg
   ];
-
-  ## GNOME Shell (extensiones)
-  programs.gnome-shell = {
-    enable = true;
-
-    extensions = with pkgs.gnomeExtensions; [
-      # Reduce input lag en fullscreen
-      disable-unredirect-fullscreen-windows
-
-      # Quita el overview al iniciar sesión
-      no-overview
-    ];
-  };
 
   ## Git
   programs.git = {
