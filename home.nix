@@ -143,6 +143,19 @@
       k = "kubectl";
       urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
+      # Alias para ver si ntsync está vivo
+      check-gaming = "ls -l /dev/ntsync && systemctl is-active lactd && cat /sys/devices/system/cpu/amd_pstate/status";
+    };
+  };
+
+  dconf.settings = {
+    "org/gnome/mutter" = {
+      experimental-features = [ "variable-refresh-rate" ];
+    };
+
+    "org/gnome/settings-daemon/plugins/power" = {
+      sleep-inactive-ac-type = "nothing";
+      power-button-action = "interactive";
     };
   };
 
