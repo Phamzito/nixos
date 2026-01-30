@@ -9,6 +9,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernel.sysctl = {
+    "kernel.sched_latency_ns" = 6000000;
+    "kernel.sched_min_granularity_ns" = 750000;
+    "kernel.sched_wakeup_granularity_ns" = 1000000;
+};
 
   ## Configuración de Nix
   nix.settings.experimental-features = [
@@ -26,6 +31,9 @@
   time.timeZone = "America/Mexico_City";
   i18n.defaultLocale = "es_MX.UTF-8";
   console.keyMap = "es";
+
+  ## Modo Rendimiento de CPU
+  powerManagement.cpuFreqGovernor = "performance";
 
   ## Servidor gráfico y GNOME
   services.xserver = {
@@ -91,6 +99,12 @@
     ];
 
     packages = with pkgs; [ ];
+  };
+
+  ## Variables de entorno para AMD + Mesa
+  environment.sessionVariables = {
+    AMD_VULKAN_ICD = "RADV";
+    RADV_PERFTEST = "aco";
   };
 
   ## Gaming
