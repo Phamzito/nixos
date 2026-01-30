@@ -99,7 +99,7 @@
       disable-unredirect-fullscreen-windows
 
       # Quita el overview al iniciar sesión
-      no-overview-at-startup
+      no-overview
     ];
   };
 
