@@ -17,6 +17,8 @@
   home.packages = with pkgs; [
     easyeffects
     lsp-plugins
+    gsettings-desktop-schemas
+    gtk3
     # Gnome
     gnomeExtensions.dash-to-dock
     gnomeExtensions.blur-my-shell
