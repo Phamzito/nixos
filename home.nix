@@ -157,8 +157,6 @@
     };
     "org/gnome/shell/extensions/vitals" = {
       hot-sensors = [
-        "_processor_usage_" 
-        "_gpu_usage_" 
         "_temperature_amdgpu_edge_"
       ];
       update-time = 2; # Segundos entre actualizaciones
