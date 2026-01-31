@@ -156,7 +156,7 @@
       ];
     };
     "org/gnome/shell/extensions/vitals" = {
-      hot-sensors = [ "_temperature_processor_" "_temperature_gpu_" ];
+      hot-sensors = [ "_temperature_processor_" "_temperature_gpu_" "_processor_usage_" ];
       update-time = 2; # Segundos entre actualizaciones
       show-voltage = false;
     };
