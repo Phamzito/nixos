@@ -65,11 +65,13 @@
     videoDrivers = [ "amdgpu" ];
   };
 
-  services.hardware.deepcool-digital-linux.enable = true;
-  services.hardware.deepcool-digital-linux.setupArgs = [
-    "--u" "c"
-    "--update" "2"
-  ];
+  services.hardware.deepcool-digital-linux = {
+    enable = true;
+    args = [ 
+      "--u" "c" 
+      "--update" "2" 
+    ];
+  };
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
