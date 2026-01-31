@@ -84,6 +84,8 @@
     i2c.enable = true;
   };
 
+  ## Flatpak
+  services.flatpak.enable = true;
   ## Impresión
   services.printing.enable = true;
 
