@@ -45,7 +45,6 @@
     wineWowPackages.stable
     winetricks
     hydralauncher
-    wineWowPackages.staging
     bottles
     heroic
 
