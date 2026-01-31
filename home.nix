@@ -15,6 +15,7 @@
 
   ## Paquetes de usuario
   home.packages = with pkgs; [
+    easyeffects
     # Gnome
     gnomeExtensions.dash-to-dock
     gnomeExtensions.blur-my-shell
