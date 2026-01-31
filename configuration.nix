@@ -15,7 +15,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
-  boot.kernelModules = [ "ntsync" "k10temp" ];
+  boot.kernelModules = [ "ntsync" ];
   boot.kernelParams = [
     "usbhid.kbpoll=1"
     "usbhid.mousepoll=1"    
@@ -65,13 +65,13 @@
     videoDrivers = [ "amdgpu" ];
   };
 
-  services.hardware.deepcool-digital-linux = {
-    enable = true;
-  };
-  services.udev.extraRules = ''
-  SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3633", MODE="0666"
-  SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3633", ATTRS{idProduct}=="0003", MODE="0666"
-  '';
+  #services.hardware.deepcool-digital-linux = {
+  #  enable = true;
+  #};
+  #services.udev.extraRules = ''
+  #SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3633", MODE="0666"
+  #SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3633", ATTRS{idProduct}=="0003", MODE="0666"
+  #'';
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
