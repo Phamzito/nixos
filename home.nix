@@ -5,12 +5,6 @@
   home.username = "pham";
   home.homeDirectory = "/home/pham";
 
-  ## Recursos X (cursor, DPI)
-  xresources.properties = {
-    "Xcursor.size" = 24;
-    "Xft.dpi" = 96;
-  };
-
   ## Discord (OpenASAR + Vencord)
   programs.discord = {
     enable = true;
