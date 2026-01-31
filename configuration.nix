@@ -69,8 +69,7 @@
     enable = true;
   };
   services.udev.extraRules = ''
-  # DeepCool AK620 Digital Pro HID
-  SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3633", ATTRS{idProduct}=="0003", MODE="0666"
+  SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3633", MODE="0666"
   '';
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
