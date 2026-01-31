@@ -17,8 +17,11 @@
   home.packages = with pkgs; [
     # Gnome
     gnomeExtensions.dash-to-dock
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.just-perfection
+    gnomeExtensions.appindicator
     gnomeExtensions.no-overview
-    gnomeExtensions.emoji-copy
+    gnomeExtensions.vitals
 
     # Utilidades
     fastfetch
@@ -145,7 +148,17 @@
       disable-user-extensions = false;
       enabled-extensions = [
         "dash-to-dock@micxgx.gmail.com"
+        "blur-my-shell@aunetx"
+        "just-perfection-desktop@just-perfection"
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "Vitals@CoreCoding.com"
+        "no-overview@fthx"
       ];
+    };
+    "org/gnome/shell/extensions/blur-my-shell/panel" = {
+      blur = true;
+      brightness = 0.75;
+      sigma = 30;
     };
     "org/gnome/shell/extensions/dash-to-dock" = {
       dash-max-icon-size = 32;
