@@ -155,6 +155,11 @@
         "no-overview@fthx"
       ];
     };
+    "org/gnome/shell/extensions/vitals" = {
+      hot-sensors = [ "_processor_usage_" "_memory_usage_" "_temperature_processor_" "_temperature_gpu_" ];
+      update-time = 2; # Segundos entre actualizaciones
+      show-voltage = false;
+    };
     "org/gnome/shell/extensions/blur-my-shell/panel" = {
       blur = true;
       brightness = 0.75;
