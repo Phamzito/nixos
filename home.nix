@@ -9,7 +9,6 @@
   programs.discord = {
     enable = true;
     package = pkgs.discord.override {
-      withOpenASAR = true;
       withVencord = true;
     };
   };
@@ -17,6 +16,7 @@
   ## Paquetes de usuario
   home.packages = with pkgs; [
     # Gnome
+    gnomeExtensions.dash-to-dock
     gnomeExtensions.no-overview
     gnomeExtensions.emoji-copy
 
@@ -141,6 +141,25 @@
   };
 
   dconf.settings = {
+    "org/gnome/shell" = {
+      disable-user-extensions = false;
+      enabled-extensions = [
+        "dash-to-dock@micxgx.gmail.com"
+      ];
+    };
+    "org/gnome/shell/extensions/dash-to-dock" = {
+      dash-max-icon-size = 32;
+      extend-height = false;
+      dock-position = "BOTTOM";
+      background-opacity = 0.4;
+      transparency-mode = "FIXED";
+      dock-fixed = false;
+      autohide = true;
+      intellihide = true;
+      show-mounts = false;
+      show-trash = false;
+      custom-theme-shrink = true;
+    };
     "org/gnome/settings-daemon/plugins/power" = {
       sleep-inactive-ac-type = "nothing";
       power-button-action = "interactive";
