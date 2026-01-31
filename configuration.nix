@@ -15,7 +15,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
-  boot.kernelModules = [ "ntsync" ];
+  boot.kernelModules = [ "ntsync" "k10temp" ];
   boot.kernelParams = [
     "usbhid.kbpoll=1"
     "usbhid.mousepoll=1"    
