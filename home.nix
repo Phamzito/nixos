@@ -16,6 +16,7 @@
   ## Paquetes de usuario
   home.packages = with pkgs; [
     # Gnome
+    gnome-software
     gnomeExtensions.dash-to-dock
     gnomeExtensions.blur-my-shell
     gnomeExtensions.just-perfection
