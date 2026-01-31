@@ -40,6 +40,9 @@
     lutris
     protonplus
     prismlauncher
+    corefonts
+    zenity
+    wineWowPackages.stable
     winetricks
     hydralauncher
     wineWowPackages.staging
